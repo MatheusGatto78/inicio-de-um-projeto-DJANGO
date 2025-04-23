@@ -35,7 +35,7 @@
     ```
     
 
-1. Entrar no ambiente virtual
+2. Entrar no ambiente virtual
     
     ```python
     venv\Scripts\activate.ps1
@@ -53,15 +53,11 @@
     ```
     
 
-1. Conferir se todo o procedimento foi feito corretamente executando:
+2. Conferir se todo o procedimento foi feito corretamente executando:
     
     ```python
     django-admin
     ```
-    
-    - Saída:
-        
-        ![image.png](attachment:44f809a0-24e3-4489-90c9-a0645363a2a2:image.png)
         
 
 # **Iniciar um Projeto no Django**
@@ -74,47 +70,30 @@
     django-admin startproject teste01
     ```
     
-    Após executar esse comando:
-    
-    - Pastas:
-        
-        ![image.png](attachment:228bc854-1489-4620-8a53-b8d6983606dd:image.png)
+
         
 
-1. Abrir a pasta `teste01` no terminal do projeto, executando o comando:
+2. Abrir a pasta `teste01` no terminal do projeto, executando o comando:
     
     ```python
     cd teste01
     ```
     
 
-1. Executar o **runserver:**
+3. Executar o **runserver:**
     
     ```python
     python manage.py runserver
     ```
     
-    - Saída:
-        
-        ![image.png](attachment:8bf63977-5698-4c54-a5d9-58d93ca5c7bc:image.png)
         
     
     Esse comando é o que colocará nosso site no ar. Depois de executarmos a primeira vez o nosso projeto em Django, também surgirá o banco de dados (**db.sqlite3**) dentro da pasta dele.
     
-    - Pastas:
-        
-        ![image.png](attachment:fa9804f5-3e35-4370-986d-a89221e81df6:image.png)
+
         
 
-1. Após isso, abrir o link do localhost que aparece no terminal.
-    - Link:
-        
-        ![image.png](attachment:90e6af02-f102-4af0-bc43-964fa5c2af2f:image.png)
-        
-    - Server:
-        
-        ![image.png](attachment:251ac7e1-6f1e-4d0e-bb29-ef6bec53b52f:image.png)
-        
+  
 
 ### **Estrutura do Projeto**
 
@@ -128,9 +107,7 @@ Os arquivos **`asgi.py`** e **`wsgi.py`** são os arquivos de configuração
 
 No arquivo **`urls.py`**, é onde definiremos os links, os endereços das páginas do nosso site. Já o **`settings.py`** é onde iremos de fato configurar o projeto. É dentro desse arquivo que definiremos as configurações e as informações essenciais para o nosso site funcionar corretamente.
 
-- Pastas:
-    
-    ![image.png](attachment:71dff856-bc24-40e0-bd08-cdf145980ee4:image.png)
+
     
 
 # **Aplicativos(APP) dentro do Projeto**
@@ -143,9 +120,6 @@ No arquivo **`urls.py`**, é onde definiremos os links, os endereços das pági
     python manage.py startapp polls #no exemplo é chamado de polls
     ```
     
-    - Pastas:
-        
-        ![image.png](attachment:e4448c95-5fee-4cea-b159-7eaa8a8f4672:image.png)
         
 
 ### **Arquivos dentro dos Aplicativos**
@@ -166,9 +140,6 @@ Por fim, temos dois arquivos muito importantes: o **`models.py`** e o **`view
 
 No **`models.py`**, é onde você definirá as informações que serão registradas no seu sistema e no seu banco de dados. O **`views.py`** é onde definirá a lógica por trás do seu site, ou seja, onde você definirá as funções ou classes que serão executadas quando o usuário acessar um link específico do seu site.
 
-- Pastas:
-    
-    ![image.png](attachment:cd8cc5f7-b4d9-4a89-af76-977a944349cb:image.png)
     
 
 # Começando uma homepage
@@ -185,7 +156,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. Na pasta `polls`, criar o arquivo `urls.py`
+2. Na pasta `polls`, criar o arquivo `urls.py`
     
     Dentro do arquivo, adicionar esse código:
     
@@ -200,7 +171,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. No arquivo `urls.py` da pasta `teste01` , adicionar esse código:
+3. No arquivo `urls.py` da pasta `teste01` , adicionar esse código:
     
     ```python
     from django.contrib import admin
@@ -213,7 +184,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. Dentro do arquivo `settings.py` modifique a parte de “INSTALLED_APPS” com o nome do aplicativo criado:
+4. Dentro do arquivo `settings.py` modifique a parte de “INSTALLED_APPS” com o nome do aplicativo criado:
     
     ```python
     INSTALLED_APPS = [
@@ -233,12 +204,9 @@ No **`models.py`**, é onde você definirá as informações que serão registr
 ---
 
 1. Criar a pasta templates e a index dentro do APP
-    - Pastas:
-        
-        ![image.png](attachment:0bdaf94b-dc39-4678-bab0-547e21a84032:image.png)
         
 
-1. Mudar as `settings.py` na parte de templates
+2. Mudar as `settings.py` na parte de templates
     
     ```python
     TEMPLATES = [
@@ -258,7 +226,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. Em views, dentro do pools(APP), retornar a página criada, no caso o index
+3. Em views, dentro do pools(APP), retornar a página criada, no caso o index
     
     ```python
     from django.http import HttpResponse
@@ -269,7 +237,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. Em `urls` dentro de `teste01`, adicione a urlpatterns no código. O código completo ficara assim:
+4. Em `urls` dentro de `teste01`, adicione a urlpatterns no código. O código completo ficara assim:
     
     ```python
     from django.contrib import admin
@@ -298,7 +266,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
         ![image.png](attachment:421233ac-bc1b-45e2-b4f0-050f1fd32393:image.png)
         
 
-1. No `settings.py` configurar ele com as pastas novas. Adicione isso ao arquivo.
+2. No `settings.py` configurar ele com as pastas novas. Adicione isso ao arquivo.
     
     ```python
     # começo do codigo
@@ -316,7 +284,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. Modificar a pasta de `urls.py` da pasta do projeto (`teste01`), 
+3. Modificar a pasta de `urls.py` da pasta do projeto (`teste01`), 
     
     ```python
     # importar
@@ -344,7 +312,7 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. Para aplicar as migrações do Django e do app:
+2. Para aplicar as migrações do Django e do app:
     
     ```python
     python manage.py makemigrations
@@ -353,4 +321,4 @@ No **`models.py`**, é onde você definirá as informações que serão registr
     ```
     
 
-1. No navegador, adicionar a rota `/admin/` do lado na url e fazer o login do super user
+3. No navegador, adicionar a rota `/admin/` do lado na url e fazer o login do super user
